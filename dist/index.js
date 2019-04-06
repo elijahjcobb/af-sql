@@ -7,6 +7,9 @@
  *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+//Imports
+const AFDB_1 = require("./AFDB");
+exports.DB = AFDB_1.AFDB;
 //Object
 var AFDBConstruct_1 = require("./object/AFDBConstruct");
 exports.Construct = AFDBConstruct_1.AFDBConstruct;
@@ -26,12 +29,13 @@ var AFDBSort_1 = require("./query/AFDBSort");
 exports.Sort = AFDBSort_1.AFDBSort;
 var AFDBSortDirection_1 = require("./query/AFDBSortDirection");
 exports.SortDirection = AFDBSortDirection_1.AFDBSortDirection;
-//Root
-var AFDB_1 = require("./AFDB");
-exports.DB = AFDB_1.AFDB;
 var AFDBCondition_1 = require("./AFDBCondition");
 exports.Condition = AFDBCondition_1.AFDBCondition;
 var AFDBDuplicateKeyHelper_1 = require("./AFDBDuplicateKeyHelper");
 exports.DuplicateKeyHelper = AFDBDuplicateKeyHelper_1.AFDBDuplicateKeyHelper;
 var AFDBTable_1 = require("./AFDBTable");
 exports.Table = AFDBTable_1.AFDBTable;
+let initHandler = (initObject) => {
+    AFDB_1.AFDB.init(initObject);
+};
+exports.initialize = initHandler;

@@ -60,15 +60,15 @@ class AFDB {
         }
         return stack;
     }
-    static init() {
-        //TODO Add static init for this.
+    static init(initObject) {
         AFDB.databasePool = SQL.createPool({
             connectionLimit: 100,
-            host: "",
-            user: "",
-            database: ""
+            host: initObject.host,
+            user: initObject.username,
+            password: initObject.password,
+            database: initObject.database,
+            port: 0
         });
     }
 }
 exports.AFDB = AFDB;
-AFDB.init();

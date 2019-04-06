@@ -1,6 +1,6 @@
 {
   "name": "af-sql",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Here is the Description!!! TODO",
   "main": "dist/index",
   "types": "dist/index",

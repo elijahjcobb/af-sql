@@ -14,6 +14,14 @@ import SQL = require("mysql");
 import { AFErrorType, AFErrorOriginType, AFErrorStack } from "af-error";
 import { AFDBDuplicateKeyHelper } from "./AFDBDuplicateKeyHelper";
 
+export type AFDBInitObject = {
+	host: string,
+	username: string,
+	password: string,
+	database: string,
+	port: number
+};
+
 export class AFDB {
 
 	private static databasePool: SQL.Pool;
@@ -75,18 +83,17 @@ export class AFDB {
 		return stack;
 	}
 
-	public static init(): void {
+	public static init(initObject: AFDBInitObject): void {
 
-		//TODO Add static init for this.
 		AFDB.databasePool = SQL.createPool({
 			connectionLimit: 100,
-			host: "",
-			user: "",
-			database: ""
+			host: initObject.host,
+			user: initObject.username,
+			password: initObject.password,
+			database: initObject.database,
+			port: 0
 		});
 
 	}
 
 }
-
-AFDB.init();

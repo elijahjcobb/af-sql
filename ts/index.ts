@@ -6,6 +6,9 @@
  *
  */
 
+//Imports
+import { AFDBInitObject as InitObject, AFDB as DB } from "./AFDB";
+
 //Object
 export { AFDBConstruct as Construct } from "./object/AFDBConstruct";
 export { AFDBGetter as Getter } from "./object/AFDBGetter";
@@ -23,7 +26,15 @@ export { AFDBSort as Sort } from "./query/AFDBSort";
 export { AFDBSortDirection as SortDirection } from "./query/AFDBSortDirection";
 
 //Root
-export { AFDB as DB } from "./AFDB";
+export { InitObject, DB };
 export { AFDBCondition as Condition } from "./AFDBCondition";
 export { AFDBDuplicateKeyHelper as DuplicateKeyHelper } from "./AFDBDuplicateKeyHelper";
 export { AFDBTable as Table } from "./AFDBTable";
+
+let initHandler: (initObject: InitObject) => void = (initObject: InitObject): void => {
+
+	DB.init(initObject);
+
+};
+
+export { initHandler as initialize };

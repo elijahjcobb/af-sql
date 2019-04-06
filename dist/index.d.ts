@@ -5,6 +5,7 @@
  * https://elijahcobb.com
  *
  */
+import { AFDBInitObject as InitObject, AFDB as DB } from "./AFDB";
 export { AFDBConstruct as Construct } from "./object/AFDBConstruct";
 export { AFDBGetter as Getter } from "./object/AFDBGetter";
 export { AFDBObject as Object } from "./object/AFDBObject";
@@ -17,7 +18,9 @@ export { AFDBQuery as Query } from "./query/AFDBQuery";
 export { AFDBResponse as Response } from "./query/AFDBResponse";
 export { AFDBSort as Sort } from "./query/AFDBSort";
 export { AFDBSortDirection as SortDirection } from "./query/AFDBSortDirection";
-export { AFDB as DB } from "./AFDB";
+export { InitObject, DB };
 export { AFDBCondition as Condition } from "./AFDBCondition";
 export { AFDBDuplicateKeyHelper as DuplicateKeyHelper } from "./AFDBDuplicateKeyHelper";
 export { AFDBTable as Table } from "./AFDBTable";
+declare let initHandler: (initObject: InitObject) => void;
+export { initHandler as initialize };
