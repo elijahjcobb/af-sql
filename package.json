@@ -1,36 +1,40 @@
 {
   "name": "af-sql",
-  "version": "1.0.2",
-  "description": "A TypeScript SDK for dealing with a SQL database. The SDK supports extending a AFDBObject class that handles all operations like updating, creating, deleting, and retrieving. Replicate a SQL table as an object with less than 20 lines of code.",
-  "main": "build/index.js",
+  "version": "1.0.3",
+  "description": "Here is the Description!!! TODO",
+  "main": "dist/index",
+  "types": "dist/index",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run compile",
+    "compile": "npm run clean && tsc -p .",
+    "watch": "tsc -w -p .",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elijahjcobb/af-sql.git"
   },
-  "keywords": [
-    "sql",
-    "mariadb",
-    "typescript",
-    "replicate",
-    "object",
-    "query",
-    "update",
-    "get",
-    "delete"
-  ],
-  "author": "Elijah Cobb",
-  "license": "ISC",
+  "keywords": [],
+  "author": "Elijah Cobb <elijah@elijahcobb.com> (https://elijahcobb.com/)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/elijahjcobb/af-sql/issues"
   },
   "homepage": "https://github.com/elijahjcobb/af-sql#readme",
   "dependencies": {
-    "@types/node": "^11.13.0",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.2"
+    "@types/node": "*",
+    "af-collections": "*",
+    "af-encryption": "*",
+    "af-error": "*",
+    "mysql": "*",
+    "typescript": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "*",
+    "@types/node": "*"
+  },
+  "files": [
+    "dist"
+  ]
 }
