@@ -5,22 +5,21 @@
  * https://elijahcobb.com
  *
  */
-import { AFDBInitObject as InitObject, AFDB as DB } from "./AFDB";
-export { AFDBConstruct as Construct } from "./object/AFDBConstruct";
-export { AFDBGetter as Getter } from "./object/AFDBGetter";
-export { AFDBObject as Object } from "./object/AFDBObject";
-export { AFDBValue as Value } from "./object/AFDBValue";
-export { AFDBCommandable as Commandable } from "./query/AFDBCommandable";
-export { AFDBFilter as Filter } from "./query/AFDBFilter";
-export { AFDBGenericQuery as GenericQuery } from "./query/AFDBGenericQuery";
-export { AFDBOperator as Operator } from "./query/AFDBOperator";
-export { AFDBQuery as Query } from "./query/AFDBQuery";
-export { AFDBResponse as Response } from "./query/AFDBResponse";
-export { AFDBSort as Sort } from "./query/AFDBSort";
-export { AFDBSortDirection as SortDirection } from "./query/AFDBSortDirection";
-export { InitObject, DB };
-export { AFDBCondition as Condition } from "./AFDBCondition";
-export { AFDBDuplicateKeyHelper as DuplicateKeyHelper } from "./AFDBDuplicateKeyHelper";
-export { AFDBTable as Table } from "./AFDBTable";
-declare let initHandler: (initObject: InitObject) => void;
-export { initHandler as initialize };
+import { ECSQLInitObject, ECSQLDatabase } from "./ECSQLDatabase";
+export { ECSQLConstruct } from "./object/ECSQLConstruct";
+export { ECSQLGetter } from "./object/ECSQLGetter";
+export { ECSQLObject } from "./object/ECSQLObject";
+export { ECSQLValue } from "./object/ECSQLValue";
+export { ECSQLCommandable } from "./query/ECSQLCommandable";
+export { ECSQLFilter } from "./query/ECSQLFilter";
+export { ECSQLGenericQuery } from "./query/ECSQLGenericQuery";
+export { ECSQLOperator } from "./query/ECSQLOperator";
+export { ECSQLQuery } from "./query/ECSQLQuery";
+export { ECSQLResponse } from "./query/ECSQLResponse";
+export { ECSQLSort } from "./query/ECSQLSort";
+export { ECSQLSortDirection } from "./query/ECSQLSortDirection";
+export { ECSQLInitObject, ECSQLDatabase };
+export { ECSQLCondition } from "./ECSQLCondition";
+export { ECSQLDuplicateKeyHelper } from "./ECSQLDuplicateKeyHelper";
+declare let initHandler: (initObject: ECSQLInitObject) => void;
+export { initHandler as ECSQLInitialize };

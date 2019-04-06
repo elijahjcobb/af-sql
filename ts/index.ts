@@ -7,34 +7,33 @@
  */
 
 //Imports
-import { AFDBInitObject as InitObject, AFDB as DB } from "./AFDB";
+import { ECSQLInitObject, ECSQLDatabase } from "./ECSQLDatabase";
 
 //Object
-export { AFDBConstruct as Construct } from "./object/AFDBConstruct";
-export { AFDBGetter as Getter } from "./object/AFDBGetter";
-export { AFDBObject as Object } from "./object/AFDBObject";
-export { AFDBValue as Value } from "./object/AFDBValue";
+export { ECSQLConstruct } from "./object/ECSQLConstruct";
+export { ECSQLGetter } from "./object/ECSQLGetter";
+export { ECSQLObject } from "./object/ECSQLObject";
+export { ECSQLValue } from "./object/ECSQLValue";
 
 //Query
-export { AFDBCommandable as Commandable } from "./query/AFDBCommandable";
-export { AFDBFilter as Filter } from "./query/AFDBFilter";
-export { AFDBGenericQuery as GenericQuery } from "./query/AFDBGenericQuery";
-export { AFDBOperator as Operator } from "./query/AFDBOperator";
-export { AFDBQuery as Query } from "./query/AFDBQuery";
-export { AFDBResponse as Response } from "./query/AFDBResponse";
-export { AFDBSort as Sort } from "./query/AFDBSort";
-export { AFDBSortDirection as SortDirection } from "./query/AFDBSortDirection";
+export { ECSQLCommandable } from "./query/ECSQLCommandable";
+export { ECSQLFilter } from "./query/ECSQLFilter";
+export { ECSQLGenericQuery } from "./query/ECSQLGenericQuery";
+export { ECSQLOperator } from "./query/ECSQLOperator";
+export { ECSQLQuery } from "./query/ECSQLQuery";
+export { ECSQLResponse } from "./query/ECSQLResponse";
+export { ECSQLSort } from "./query/ECSQLSort";
+export { ECSQLSortDirection } from "./query/ECSQLSortDirection";
 
 //Root
-export { InitObject, DB };
-export { AFDBCondition as Condition } from "./AFDBCondition";
-export { AFDBDuplicateKeyHelper as DuplicateKeyHelper } from "./AFDBDuplicateKeyHelper";
-export { AFDBTable as Table } from "./AFDBTable";
+export { ECSQLInitObject, ECSQLDatabase };
+export { ECSQLCondition } from "./ECSQLCondition";
+export { ECSQLDuplicateKeyHelper } from "./ECSQLDuplicateKeyHelper";
 
-let initHandler: (initObject: InitObject) => void = (initObject: InitObject): void => {
+let initHandler: (initObject: ECSQLInitObject) => void = (initObject: ECSQLInitObject): void => {
 
-	DB.init(initObject);
+	ECSQLDatabase.init(initObject);
 
 };
 
-export { initHandler as initialize };
+export { initHandler as ECSQLInitialize };

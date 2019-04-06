@@ -1,7 +1,7 @@
 {
-  "name": "af-sql",
-  "version": "1.0.1",
-  "description": "Here is the Description!!! TODO",
+  "name": "@elijahjcobb/sql",
+  "version": "0.0.6",
+  "description": "desc TODO",
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
@@ -11,28 +11,31 @@
     "watch": "tsc -w -p .",
     "clean": "rm -rf dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elijahjcobb/af-sql.git"
+    "url": "git+https://github.com/elijahjcobb/sql.git"
   },
   "keywords": [],
   "author": "Elijah Cobb <elijah@elijahcobb.com> (https://elijahcobb.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/elijahjcobb/af-sql/issues"
+    "url": "https://github.com/elijahjcobb/sql/issues"
   },
-  "homepage": "https://github.com/elijahjcobb/af-sql#readme",
+  "homepage": "https://github.com/elijahjcobb/sql#readme",
   "dependencies": {
-    "@types/node": "*",
-    "af-collections": "*",
-    "af-encryption": "*",
-    "af-error": "*",
-    "mysql": "*",
-    "typescript": "*"
+    "@elijahjcobb/collections": "latest",
+    "@elijahjcobb/encryption": "latest",
+    "@elijahjcobb/error": "latest",
+    "@types/node": "latest",
+    "mysql": "2.16.0",
+    "typescript": "latest"
   },
   "devDependencies": {
-    "typescript": "*",
-    "@types/node": "*"
+    "typescript": "latest",
+    "@types/node": "latest"
   },
   "files": [
     "dist"
