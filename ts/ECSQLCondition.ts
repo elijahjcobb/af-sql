@@ -22,6 +22,9 @@
  *
  */
 
+/**
+ * An enum for defining conditionals.
+ */
 export enum ECSQLCondition {
 	AND = "AND",
 	OR = "OR"

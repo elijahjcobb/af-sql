@@ -21,6 +21,9 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+/**
+ * An enum for defining conditionals.
+ */
 export declare enum ECSQLCondition {
     AND = "AND",
     OR = "OR"

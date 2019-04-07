@@ -1,12 +1,25 @@
 "use strict";
 /**
  *
- * Ampel Feedback
- * Formative Developments, LLC.
- * 2018
- *
  * Elijah Cobb
- * elijah@ampelfeedback.com
+ * elijah@elijahcobb.com
+ * https://elijahcobb.com
+ *
+ *
+ * Copyright 2019 Elijah Cobb
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+ * to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+ * OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -24,24 +37,52 @@ const ECSQLResponse_1 = require("./ECSQLResponse");
 const ECSQLOperator_1 = require("./ECSQLOperator");
 const collections_1 = require("@elijahjcobb/collections");
 const error_1 = require("@elijahjcobb/error");
+/**
+ * A class that queries the SQL database from filters, a sort, limit, and conditionals.
+ */
 class ECSQLQuery extends collections_1.ECPrototype {
+    /**
+     * Create a new ECSQLQuery instance.
+     * @param {string} table
+     */
     constructor(table) {
         super();
         this.table = table;
         this.filters = new collections_1.ECArrayList();
     }
+    /**
+     * Set the limit of rows that will be returned.
+     * @param {number} limit The number of rows to be returned.
+     */
     setLimit(limit) {
         this.limit = limit;
     }
+    /**
+     * Se the conditional for the filters that are present.
+     * @param {ECSQLCondition} conditional The conditional for the filters.
+     */
     setConditional(conditional) {
         this.conditional = conditional;
     }
+    /**
+     * Add an ECSQLFilter instance to the ECSQLQuery.
+     * @param {ECSQLFilter} filter The filter instance to be added.
+     */
     addFilter(filter) {
         this.filters.add(filter);
     }
+    /**
+     * Set the ECSQLSort instance to be used in the ECSQLQuery.
+     * @param {ECSQLSort} sort The sort method to be used.
+     */
     setSort(sort) {
         this.sort = sort;
     }
+    /**
+     * Generate the entire SQL command from all filters, sort, and limit.
+     * @param {boolean} isCount Whether or not there is a count limit.
+     * @return {string} The SQL command.
+     */
     generateSQLCommand(isCount) {
         let command = "";
         if (isCount) {
@@ -69,6 +110,12 @@ class ECSQLQuery extends collections_1.ECPrototype {
         command += ";";
         return command;
     }
+    /**
+     * Get the object with a specified id.
+     * @param {string} id The id of the object to be retrieved.
+     * @param {boolean} allowUndefined Whether or not an error should be thrown if the object is undefined.
+     * @return {Promise<ECSQLResponse>} A promise containing a ECSQLResponse instance.
+     */
     getObjectWithId(id, allowUndefined) {
         return __awaiter(this, void 0, void 0, function* () {
             this.limit = 1;
@@ -84,6 +131,11 @@ class ECSQLQuery extends collections_1.ECPrototype {
             return response;
         });
     }
+    /**
+     * Get the first object from the query instance.
+     * @param {boolean} allowUndefined Whether or not an error should be thrown if the object is undefined.
+     * @return {Promise<ECSQLResponse>} A promise containing a ECSQLResponse instance.
+     */
     getFirstObject(allowUndefined) {
         return __awaiter(this, void 0, void 0, function* () {
             this.limit = 1;
@@ -96,6 +148,11 @@ class ECSQLQuery extends collections_1.ECPrototype {
             return response;
         });
     }
+    /**
+     * Get all objects within the query whose id is contained in the ids specified.
+     * @param {string[]} ids A native JavaScript string array of ids.
+     * @return {Promise<ECArray<ECSQLResponse>>} A promise containing an ECArray of ECSQLResponse instances.
+     */
     getObjectsWithIds(ids) {
         return __awaiter(this, void 0, void 0, function* () {
             this.limit = undefined;
@@ -108,6 +165,10 @@ class ECSQLQuery extends collections_1.ECPrototype {
             return responses.toAFArray();
         });
     }
+    /**
+     * Get all objects that follow the specified query.
+     * @return {Promise<ECArray<ECSQLResponse>>} A promise returning an ECArray of ECSQLResponse instances.
+     */
     getAllObjects() {
         return __awaiter(this, void 0, void 0, function* () {
             let objects = yield ECSQLDatabase_1.ECSQLDatabase.query(this.generateSQLCommand());
@@ -116,6 +177,10 @@ class ECSQLQuery extends collections_1.ECPrototype {
             return responses.toAFArray();
         });
     }
+    /**
+     * Count how many objects follow the specified query.
+     * @return {Promise<number>} A promise containing a number.
+     */
     count() {
         return __awaiter(this, void 0, void 0, function* () {
             let responses = yield ECSQLDatabase_1.ECSQLDatabase.query(this.generateSQLCommand(true));
@@ -123,6 +188,10 @@ class ECSQLQuery extends collections_1.ECPrototype {
             return responseObject["COUNT(*)"];
         });
     }
+    /**
+     * Check if the query returns any objects at all.
+     * @return {Promise<boolean>} A promise containing a boolean.
+     */
     exists() {
         return __awaiter(this, void 0, void 0, function* () {
             return (yield this.count()) > 0;

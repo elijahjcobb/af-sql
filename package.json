@@ -1,7 +1,7 @@
 {
   "name": "@elijahjcobb/sql",
-  "version": "0.0.6",
-  "description": "desc TODO",
+  "version": "0.0.7",
+  "description": "A package to quickly and easily handle communication with a SQL server.",
   "main": "dist/index",
   "types": "dist/index",
   "scripts": {
@@ -18,7 +18,20 @@
     "type": "git",
     "url": "git+https://github.com/elijahjcobb/sql.git"
   },
-  "keywords": [],
+  "keywords": [
+    "sql",
+    "prototype",
+    "object",
+    "mariadb",
+    "database",
+    "query",
+    "sort",
+    "limit",
+    "save",
+    "update",
+    "delete",
+    "create"
+  ],
   "author": "Elijah Cobb <elijah@elijahcobb.com> (https://elijahcobb.com/)",
   "license": "MIT",
   "bugs": {

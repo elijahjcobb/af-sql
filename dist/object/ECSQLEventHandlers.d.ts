@@ -22,15 +22,22 @@
  *
  */
 /**
- * Different operators that can be used in a ECSQLFilter instance.
+ * An interface to provide the necessary event handlers to children of ECSQLObject instances.
  */
-export declare enum ECSQLOperator {
-    Equal = "=",
-    NotEqual = "!=",
-    GreaterThan = ">",
-    LessThan = "<",
-    GreaterThanOrEqual = ">=",
-    LessThanOrEqual = "<=",
-    ContainedIn = "IN",
-    Like = "LIKE"
+export interface ECSQLEventHandlers {
+    /**
+     * Will be fired after the object is created for the very first time.
+     * @return {Promise<void>}
+     */
+    onCreated(): Promise<void>;
+    /**
+     * Will be fired after the object is updated any time after the very first time.
+     * @return {Promise<void>}
+     */
+    onUpdated(): Promise<void>;
+    /**
+     * Will be fired when/if the object is deleted.
+     * @return {Promise<void>}
+     */
+    onDeleted(): Promise<void>;
 }

@@ -1,12 +1,25 @@
 "use strict";
 /**
  *
- * Ampel Feedback
- * Formative Developments, LLC.
- * 2018
- *
  * Elijah Cobb
- * elijah@ampelfeedback.com
+ * elijah@elijahcobb.com
+ * https://elijahcobb.com
+ *
+ *
+ * Copyright 2019 Elijah Cobb
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+ * to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+ * OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -18,11 +31,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const __1 = require("..");
 const ECSQLDatabase_1 = require("../ECSQLDatabase");
 const encryption_1 = require("@elijahjcobb/encryption");
-const ECSQLQuery_1 = require("../query/ECSQLQuery");
 const error_1 = require("@elijahjcobb/error");
 const collections_1 = require("@elijahjcobb/collections");
+/**
+ * An abstract class to represent a object that would be received from a SQL table. Extend this class and you will
+ * have a class for any SQL table in under 20 lines of code!!!
+ */
 class ECSQLObject extends collections_1.ECPrototype {
     /**
      * Get a map that represents this database object that is formatted for the SQL database.
@@ -61,8 +78,8 @@ class ECSQLObject extends collections_1.ECPrototype {
     }
     /**
      * Update the value for a specific item on this object by key.
-     * @param {string} key
-     * @return {Promise<void>}
+     * @param {string} key The key to be updated.
+     * @return {Promise<void>} A promise.
      */
     updateKey(key) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -80,6 +97,11 @@ class ECSQLObject extends collections_1.ECPrototype {
             yield this.onUpdated();
         });
     }
+    /**
+     * Used to decode the internal structure of an object. This is automatically called when you call
+     * populateFromDatabaseResponse() as it calls this method than the decode() method.
+     * @param {ECMap<string, any>} content The content that was received from the database.
+     */
     decodeInternalStructure(content) {
         this.id = content.get("id");
         try {
@@ -95,11 +117,22 @@ class ECSQLObject extends collections_1.ECPrototype {
         if (this.updatedAt < 10 || this.updatedAt === null || this.updatedAt === undefined)
             this.updatedAt = Date.now();
     }
+    /**
+     * Call this method when you are creating objects from a ECSQLQuery's response.
+     * @param {ECSQLResponse} response An ECSQLResponse instance that was returned from a ECSQLQuery instance.
+     */
     populateFromDatabaseResponse(response) {
         let content = response.getContent();
         this.decodeInternalStructure(content);
         this.decode(content);
     }
+    /**
+     * If you are going to override the toJSON method that is called use this method. It takes a map and returns
+     * a map instance. So you can easily tack on the internal structure of the database object.
+     *
+     * @param {ECMap<string, any>} map The map to add items too.
+     * @return {ECMap<string, any>} Returns the map.
+     */
     addInternalStructureToMap(map) {
         map.set("id", this.id);
         map.set("createdAt", {
@@ -113,15 +146,15 @@ class ECSQLObject extends collections_1.ECPrototype {
         return map;
     }
     /**
-     * Create a query using the table this object is contained in.
-     * @return {ECSQLQuery}
+     * Create a query using the table the object is contained in.
+     * @return {ECSQLQuery} A new ECSQLQuery instance.
      */
     createQuery() {
-        return new ECSQLQuery_1.ECSQLQuery(this.getTable());
+        return new __1.ECSQLQuery(this.getTable());
     }
     /**
      * Convert this object to a JSON representation.
-     * @return {object}
+     * @return {object} A native JavaScript object.
      */
     toJSON() {
         let map = this.toMap();
@@ -137,7 +170,7 @@ class ECSQLObject extends collections_1.ECPrototype {
         return map.toJSON();
     }
     /**
-     * Convert this to a Map.
+     * Convert this instance to a ECMap.
      * @return {ECMap<string, any>}
      */
     toMap() {
@@ -217,7 +250,8 @@ class ECSQLObject extends collections_1.ECPrototype {
     }
     /**
      * Delete this instance from the database and retain all values on this class.
-     * @return {Promise<void>}
+     * This method will set this.id to undefined as it know longer has a link in the database.
+     * @return {Promise<void>} A promise
      */
     delete() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -233,8 +267,8 @@ class ECSQLObject extends collections_1.ECPrototype {
         });
     }
     /**
-     * If this exists, update, if it does not exist, create.
-     * @returns {Promise<void>}
+     * If the instance exists in the table update() will fire, if not, create() will fire.
+     * @returns {Promise<void>} A promise.
      */
     save() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -248,7 +282,7 @@ class ECSQLObject extends collections_1.ECPrototype {
     }
     /**
      * Refresh this instance with all information from the database.
-     * @return {Promise<void>}
+     * @return {Promise<void>} A promise.
      */
     refresh() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -257,11 +291,15 @@ class ECSQLObject extends collections_1.ECPrototype {
                 stack.addGenericError();
                 throw stack;
             }
-            let query = new ECSQLQuery_1.ECSQLQuery(this.getTable());
+            let query = new __1.ECSQLQuery(this.getTable());
             let response = yield query.getObjectWithId(this.id);
             this.populateFromDatabaseResponse(response);
         });
     }
+    /**
+     * Will set the updatedAt value for this object in the database to the current time.
+     * @return {Promise<void>} A promise.
+     */
     fireUpdatedAt() {
         return __awaiter(this, void 0, void 0, function* () {
             let updatedAt = Date.now();

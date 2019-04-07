@@ -1,23 +1,40 @@
 /**
  *
- * Ampel Feedback
- * Formative Developments, LLC.
- * 2018
- *
  * Elijah Cobb
- * elijah@ampelfeedback.com
+ * elijah@elijahcobb.com
+ * https://elijahcobb.com
+ *
+ *
+ * Copyright 2019 Elijah Cobb
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+ * to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial
+ * portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+ * OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
 
-import { ECSQLResponse } from "../query/ECSQLResponse";
+import { ECSQLResponse, ECSQLQuery } from "..";
 import { ECSQLDatabase } from "../ECSQLDatabase";
 import { ECGenerator } from "@elijahjcobb/encryption";
-import { ECSQLQuery } from "../query/ECSQLQuery";
 import { ECSQLValue } from "./ECSQLValue";
 import { ECErrorStack, ECErrorOriginType, ECErrorType } from "@elijahjcobb/error";
 import { ECArrayList, ECPrototype, ECMap } from "@elijahjcobb/collections";
+import { ECSQLEventHandlers } from "./ECSQLEventHandlers";
 
-export abstract class ECSQLObject extends ECPrototype {
+/**
+ * An abstract class to represent a object that would be received from a SQL table. Extend this class and you will
+ * have a class for any SQL table in under 20 lines of code!!!
+ */
+export abstract class ECSQLObject extends ECPrototype implements ECSQLEventHandlers {
 
 	public id: string;
 	public updatedAt: number;
@@ -80,28 +97,22 @@ export abstract class ECSQLObject extends ECPrototype {
 	}
 
 	/**
-	 * Abstract methods required for notification system.
-	 */
-	protected abstract async onCreated(): Promise<void>;
-	protected abstract async onUpdated(): Promise<void>;
-	protected abstract async onDeleted(): Promise<void>;
-
-	/**
-	 * Get the table this instance belongs to.
+	 * Get the table as a string this instance belongs to.
 	 * @return {string}
 	 */
 	protected abstract getTable(): string;
 
 	/**
-	 *
-	 * @return {ECMap<string, any>}
+	 * A method abstracted. Return an ECMap instance where the variable name is the key and the value is the value.
+	 * Think of this method as encoding your object before it gets sent to the database.
+	 * @return {ECMap<string, ECSQLValue>}
 	 */
 	protected abstract encode(): ECMap<string, ECSQLValue>;
 
 	/**
 	 * Update the value for a specific item on this object by key.
-	 * @param {string} key
-	 * @return {Promise<void>}
+	 * @param {string} key The key to be updated.
+	 * @return {Promise<void>} A promise.
 	 */
 	protected async updateKey(key: string): Promise<void> {
 
@@ -127,6 +138,11 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	}
 
+	/**
+	 * Used to decode the internal structure of an object. This is automatically called when you call
+	 * populateFromDatabaseResponse() as it calls this method than the decode() method.
+	 * @param {ECMap<string, any>} content The content that was received from the database.
+	 */
 	protected decodeInternalStructure(content: ECMap<string, any>): void {
 
 		this.id = content.get("id");
@@ -147,10 +163,26 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	/**
 	 * Decode a database object to this instance of a database class.
-	 * @param content
+	 *
+	 * Use this method to decode database values onto your object. Don't worry about internal structure items as
+	 * they are automatically handled.
+	 *
+	 * @param content The content that was received from the database.
 	 */
 	protected abstract decode(content: ECMap<string, any>): void;
 
+	/**
+	 * Abstracted methods required by ECSQLEventHandlers interface. You must implement these methods.
+	 * Check the documentation in ECSQLEventHandlers for more information.
+	 */
+	public abstract async onCreated(): Promise<void>;
+	public abstract async onUpdated(): Promise<void>;
+	public abstract async onDeleted(): Promise<void>;
+
+	/**
+	 * Call this method when you are creating objects from a ECSQLQuery's response.
+	 * @param {ECSQLResponse} response An ECSQLResponse instance that was returned from a ECSQLQuery instance.
+	 */
 	public populateFromDatabaseResponse(response: ECSQLResponse): void {
 
 		let content: ECMap<string, any> = response.getContent();
@@ -161,6 +193,13 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	}
 
+	/**
+	 * If you are going to override the toJSON method that is called use this method. It takes a map and returns
+	 * a map instance. So you can easily tack on the internal structure of the database object.
+	 *
+	 * @param {ECMap<string, any>} map The map to add items too.
+	 * @return {ECMap<string, any>} Returns the map.
+	 */
 	public addInternalStructureToMap(map: ECMap<string, any>): ECMap<string, any> {
 
 		map.set("id", this.id);
@@ -178,8 +217,8 @@ export abstract class ECSQLObject extends ECPrototype {
 	}
 
 	/**
-	 * Create a query using the table this object is contained in.
-	 * @return {ECSQLQuery}
+	 * Create a query using the table the object is contained in.
+	 * @return {ECSQLQuery} A new ECSQLQuery instance.
 	 */
 	public createQuery(): ECSQLQuery {
 
@@ -189,7 +228,7 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	/**
 	 * Convert this object to a JSON representation.
-	 * @return {object}
+	 * @return {object} A native JavaScript object.
 	 */
 	public toJSON(): object {
 
@@ -210,7 +249,7 @@ export abstract class ECSQLObject extends ECPrototype {
 	}
 
 	/**
-	 * Convert this to a Map.
+	 * Convert this instance to a ECMap.
 	 * @return {ECMap<string, any>}
 	 */
 	public toMap(): ECMap<string, any> {
@@ -330,7 +369,8 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	/**
 	 * Delete this instance from the database and retain all values on this class.
-	 * @return {Promise<void>}
+	 * This method will set this.id to undefined as it know longer has a link in the database.
+	 * @return {Promise<void>} A promise
 	 */
 	public async delete(): Promise<void> {
 
@@ -354,8 +394,8 @@ export abstract class ECSQLObject extends ECPrototype {
 	}
 
 	/**
-	 * If this exists, update, if it does not exist, create.
-	 * @returns {Promise<void>}
+	 * If the instance exists in the table update() will fire, if not, create() will fire.
+	 * @returns {Promise<void>} A promise.
 	 */
 	public async save(): Promise<void> {
 
@@ -373,7 +413,7 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	/**
 	 * Refresh this instance with all information from the database.
-	 * @return {Promise<void>}
+	 * @return {Promise<void>} A promise.
 	 */
 	public async refresh(): Promise<void> {
 
@@ -392,7 +432,10 @@ export abstract class ECSQLObject extends ECPrototype {
 
 	}
 
-
+	/**
+	 * Will set the updatedAt value for this object in the database to the current time.
+	 * @return {Promise<void>} A promise.
+	 */
 	public async fireUpdatedAt(): Promise<void> {
 
 		let updatedAt: number = Date.now();

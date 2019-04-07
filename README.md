@@ -1,2 +1,2 @@
-# Ampel Feedback SQL
-documentation coming very soon. out for coffee.
+# SQL
+A package to quickly and easily handle communication with a SQL server.

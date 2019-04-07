@@ -23,6 +23,9 @@
  *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * An enum for defining conditionals.
+ */
 var ECSQLCondition;
 (function (ECSQLCondition) {
     ECSQLCondition["AND"] = "AND";
