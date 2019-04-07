@@ -1,6 +1,6 @@
 {
   "name": "@elijahjcobb/sql",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A package to quickly and easily handle communication with a SQL server.",
   "main": "dist/index",
   "types": "dist/index",
