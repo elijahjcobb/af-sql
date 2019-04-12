@@ -1,6 +1,6 @@
 {
   "name": "@elijahjcobb/sql",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "A package to quickly and easily handle communication with a SQL server.",
   "main": "dist/index",
   "types": "dist/index",
@@ -42,13 +42,12 @@
     "@elijahjcobb/collections": "latest",
     "@elijahjcobb/encryption": "latest",
     "@elijahjcobb/error": "latest",
-    "@types/node": "latest",
-    "mysql": "2.16.0",
-    "typescript": "latest"
+    "mysql": "2.16.0"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/node": "latest"
+    "@types/node": "^11.13.2",
+    "tslint": "5.15.0",
+    "typescript": "^3.4.3"
   },
   "files": [
     "dist"

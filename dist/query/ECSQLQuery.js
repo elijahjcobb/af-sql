@@ -162,7 +162,7 @@ class ECSQLQuery extends collections_1.ECPrototype {
             let objects = yield ECSQLDatabase_1.ECSQLDatabase.query(this.generateSQLCommand());
             let responses = new collections_1.ECArrayList();
             objects.forEach((object) => responses.add(new ECSQLResponse_1.ECSQLResponse(this.table, object)));
-            return responses.toAFArray();
+            return responses.toArray();
         });
     }
     /**
@@ -174,7 +174,7 @@ class ECSQLQuery extends collections_1.ECPrototype {
             let objects = yield ECSQLDatabase_1.ECSQLDatabase.query(this.generateSQLCommand());
             let responses = new collections_1.ECArrayList();
             objects.forEach((object) => responses.add(new ECSQLResponse_1.ECSQLResponse(this.table, object)));
-            return responses.toAFArray();
+            return responses.toArray();
         });
     }
     /**

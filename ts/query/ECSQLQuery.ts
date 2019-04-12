@@ -203,7 +203,7 @@ export class ECSQLQuery extends ECPrototype implements ECSQLCommandable {
 		let responses: ECArrayList<ECSQLResponse> = new ECArrayList<ECSQLResponse>();
 		objects.forEach((object: object) => responses.add(new ECSQLResponse(this.table, object)));
 
-		return responses.toAFArray();
+		return responses.toArray();
 
 	}
 
@@ -217,7 +217,7 @@ export class ECSQLQuery extends ECPrototype implements ECSQLCommandable {
 		let responses: ECArrayList<ECSQLResponse> = new ECArrayList<ECSQLResponse>();
 		objects.forEach((object: object) => responses.add(new ECSQLResponse(this.table, object)));
 
-		return responses.toAFArray();
+		return responses.toArray();
 
 	}
 

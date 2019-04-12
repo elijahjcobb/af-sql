@@ -24,12 +24,11 @@
 import { ECSQLResponse, ECSQLQuery } from "..";
 import { ECSQLValue } from "./ECSQLValue";
 import { ECPrototype, ECMap } from "@elijahjcobb/collections";
-import { ECSQLEventHandlers } from "./ECSQLEventHandlers";
 /**
  * An abstract class to represent a object that would be received from a SQL table. Extend this class and you will
  * have a class for any SQL table in under 20 lines of code!!!
  */
-export declare abstract class ECSQLObject extends ECPrototype implements ECSQLEventHandlers {
+export declare abstract class ECSQLObject extends ECPrototype {
     id: string;
     updatedAt: number;
     createdAt: number;
@@ -71,12 +70,14 @@ export declare abstract class ECSQLObject extends ECPrototype implements ECSQLEv
      */
     protected abstract decode(content: ECMap<string, any>): void;
     /**
-     * Abstracted methods required by ECSQLEventHandlers interface. You must implement these methods.
-     * Check the documentation in ECSQLEventHandlers for more information.
+     * Abstracted methods required as an event system.
+     * onCreated will be called after an object is created.
+     * onUpdated will be called after an object is updated.
+     * onDeleted will be called after an object is deleted.
      */
-    abstract onCreated(): Promise<void>;
-    abstract onUpdated(): Promise<void>;
-    abstract onDeleted(): Promise<void>;
+    protected abstract onCreated(): Promise<void>;
+    protected abstract onUpdated(): Promise<void>;
+    protected abstract onDeleted(): Promise<void>;
     /**
      * Call this method when you are creating objects from a ECSQLQuery's response.
      * @param {ECSQLResponse} response An ECSQLResponse instance that was returned from a ECSQLQuery instance.

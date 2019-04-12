@@ -28,13 +28,12 @@ import { ECGenerator } from "@elijahjcobb/encryption";
 import { ECSQLValue } from "./ECSQLValue";
 import { ECErrorStack, ECErrorOriginType, ECErrorType } from "@elijahjcobb/error";
 import { ECArrayList, ECPrototype, ECMap } from "@elijahjcobb/collections";
-import { ECSQLEventHandlers } from "./ECSQLEventHandlers";
 
 /**
  * An abstract class to represent a object that would be received from a SQL table. Extend this class and you will
  * have a class for any SQL table in under 20 lines of code!!!
  */
-export abstract class ECSQLObject extends ECPrototype implements ECSQLEventHandlers {
+export abstract class ECSQLObject extends ECPrototype {
 
 	public id: string;
 	public updatedAt: number;
@@ -172,12 +171,14 @@ export abstract class ECSQLObject extends ECPrototype implements ECSQLEventHandl
 	protected abstract decode(content: ECMap<string, any>): void;
 
 	/**
-	 * Abstracted methods required by ECSQLEventHandlers interface. You must implement these methods.
-	 * Check the documentation in ECSQLEventHandlers for more information.
+	 * Abstracted methods required as an event system.
+	 * onCreated will be called after an object is created.
+	 * onUpdated will be called after an object is updated.
+	 * onDeleted will be called after an object is deleted.
 	 */
-	public abstract async onCreated(): Promise<void>;
-	public abstract async onUpdated(): Promise<void>;
-	public abstract async onDeleted(): Promise<void>;
+	protected abstract async onCreated(): Promise<void>;
+	protected abstract async onUpdated(): Promise<void>;
+	protected abstract async onDeleted(): Promise<void>;
 
 	/**
 	 * Call this method when you are creating objects from a ECSQLQuery's response.
@@ -279,8 +280,8 @@ export abstract class ECSQLObject extends ECPrototype implements ECSQLEventHandl
 
 		let createProcess: () => Promise<string> = async (): Promise<string> => {
 
-			let keys: ECArrayList<string> = map.keys().toAFArrayList();
-			let values: ECArrayList<any> = map.values().toAFArrayList();
+			let keys: ECArrayList<string> = map.keys().toArrayList();
+			let values: ECArrayList<any> = map.values().toArrayList();
 
 			let newID: string = ECGenerator.randomId();
 

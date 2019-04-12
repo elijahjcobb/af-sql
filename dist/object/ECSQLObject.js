@@ -190,8 +190,8 @@ class ECSQLObject extends collections_1.ECPrototype {
             let map = this.getFormattedMap();
             let recurseCount = 0;
             let createProcess = () => __awaiter(this, void 0, void 0, function* () {
-                let keys = map.keys().toAFArrayList();
-                let values = map.values().toAFArrayList();
+                let keys = map.keys().toArrayList();
+                let values = map.values().toArrayList();
                 let newID = encryption_1.ECGenerator.randomId();
                 keys.add("id");
                 values.add("'" + newID + "'");
