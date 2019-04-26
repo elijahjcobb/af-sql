@@ -28,14 +28,12 @@
 export declare class ECCipher {
     private readonly iv;
     private readonly algo;
-    private readonly salt;
     private readonly password;
     /**
      * Create a new ECCipher instance.
      * @param {string} password A password used to encrypt data.
-     * @param {string} salt An optional salt. Use for greater security.
      */
-    constructor(password: string, salt?: string);
+    constructor(password: Buffer);
     /**
      * Encrypt data with a ECCipher instance.
      * @param {Buffer} data Data to encrypt as a Buffer.

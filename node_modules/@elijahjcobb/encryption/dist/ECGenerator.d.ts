@@ -21,10 +21,17 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
+/// <reference types="node" />
 /**
  * An abstract class with static helper methods to generate random objects using crypto.
  */
 export declare class ECGenerator {
+    /**
+     * Generate random bytes of length.
+     * @param {number} length The amount of bytes.
+     * @return {Buffer} A buffer.
+     */
+    static randomBytes(length: number): Buffer;
     /**
      * Generate a randomId with length 16 with lowercase letters, uppercase letters, and numbers.
      * @return {string} A random string.

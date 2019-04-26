@@ -3,45 +3,87 @@
   <component name="ChangeListManager">
     <list default="true" id="4a1e4f3c-4df2-4716-9141-ff740beabe13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/object/ECSQLEventHandlers.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/object/ECSQLEventHandlers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/object/ECSQLObject.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/object/ECSQLObject.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/object/ECSQLObject.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/object/ECSQLObject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/query/ECSQLQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/query/ECSQLQuery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/js-yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mkdirp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mkdirp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tslint" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tslint" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArray.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArray.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/ECSQLDatabase.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/ECSQLDatabase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayable.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/array/ECArrayable.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/map/ECMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/dist/map/ECMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECError.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorStack.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorStack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorTypes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/collections/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECCipher.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECCipher.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECCipher.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECCipher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECGenerator.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECGenerator.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECGenerator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/dist/ECGenerator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/collections/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/error/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/node_modules/@elijahjcobb/error/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/encryption/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECCSV.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECCSV.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECEnum.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECEnum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECIterator.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECIterator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECPrototype.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECPrototype.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECQueue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECQueue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECSet.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECSet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECStack.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/ECStack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArray.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArrayList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArrayable.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/array/ECArrayable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECDictionary.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECDictionary.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECMap.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECMappable.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/dist/map/ECMappable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECError.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorStack.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorStack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorTypes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/ECErrorTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/node_modules/@elijahjcobb/error/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/collections/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECError.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECErrorStack.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECErrorStack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECErrorTypes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/ECErrorTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/node_modules/@elijahjcobb/error/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@elijahjcobb/error/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@types/node/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/crypto.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/crypto.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@types/node/globals.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/globals.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/@types/node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/querystring.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/querystring.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@types/node/url.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@types/node/url.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tslint/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tslint/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/tsc.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/tsc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/tsserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/tsserver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/tsserverlibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/tsserverlibrary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/typescript.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/typescript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/typescriptServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/typescriptServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/lib/typingsInstaller.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/lib/typingsInstaller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/typescript/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/typescript/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/object/ECSQLEventHandlers.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/object/ECSQLObject.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/object/ECSQLObject.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/query/ECSQLQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/query/ECSQLQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/ECSQLDatabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/ECSQLDatabase.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,11 +95,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ts/object/ECSQLObject.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="4170">
               <caret line="283" column="69" selection-start-line="283" selection-start-column="69" selection-end-line="283" selection-end-column="69" />
               <folding>
                 <element signature="e#1177#1224#0" expanded="true" />
@@ -66,13 +108,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ts/query/ECSQLQuery.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+            <state relative-caret-position="2805">
+              <caret line="195" selection-start-line="195" selection-end-line="195" />
               <folding>
                 <element signature="e#1177#1221#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ts/ECSQLDatabase.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="507">
+              <caret line="126" column="28" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+              <folding>
+                <element signature="n#SQL#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,18 +212,18 @@
         <option value="$PROJECT_DIR$/ts/query/ECSQLCommandable.ts" />
         <option value="$PROJECT_DIR$/ts/query/ECSQLSortDirection.ts" />
         <option value="$PROJECT_DIR$/ts/ECSQLCondition.ts" />
-        <option value="$PROJECT_DIR$/ts/ECSQLDatabase.ts" />
         <option value="$PROJECT_DIR$/ts/ECSQLDuplicateKeyHelper.ts" />
         <option value="$PROJECT_DIR$/ts/index.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/ts/object/ECSQLEventHandlers.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/ts/object/ECSQLObject.ts" />
         <option value="$PROJECT_DIR$/ts/query/ECSQLQuery.ts" />
+        <option value="$PROJECT_DIR$/ts/ECSQLDatabase.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="949" />
@@ -173,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,7 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -275,17 +338,21 @@
       <workItem from="1554840855902" duration="28000" />
       <workItem from="1554842301005" duration="25000" />
       <workItem from="1554876539404" duration="270000" />
+      <workItem from="1555298425078" duration="240000" />
+      <workItem from="1555299549353" duration="47000" />
+      <workItem from="1555300319381" duration="67000" />
+      <workItem from="1555375171198" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14223000" />
+    <option name="totallyTimeSpent" value="14707000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3009768" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31562883" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -299,7 +366,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Statistic" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24795918" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24795918" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.24693878" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -421,16 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ts/ECSQLDatabase.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="117" column="69" selection-start-line="117" selection-start-column="69" selection-end-line="117" selection-end-column="69" />
-          <folding>
-            <element signature="n#SQL#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ts/ECSQLDuplicateKeyHelper.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -458,28 +515,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ts/object/ECSQLEventHandlers.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ts/object/ECSQLEventHandlers.ts" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ts/object/ECSQLObject.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="4170">
           <caret line="283" column="69" selection-start-line="283" selection-start-column="69" selection-end-line="283" selection-end-column="69" />
           <folding>
             <element signature="e#1177#1224#0" expanded="true" />
@@ -489,11 +533,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ts/query/ECSQLQuery.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
+        <state relative-caret-position="2805">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
           <folding>
             <element signature="e#1177#1221#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ts/ECSQLDatabase.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="126" column="28" selection-start-line="126" selection-start-column="28" selection-end-line="126" selection-end-column="28" />
+          <folding>
+            <element signature="n#SQL#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
         </state>
       </provider>
     </entry>

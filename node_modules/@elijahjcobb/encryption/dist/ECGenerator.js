@@ -23,10 +23,19 @@
  *
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+const Cryptography = require("crypto");
 /**
  * An abstract class with static helper methods to generate random objects using crypto.
  */
 class ECGenerator {
+    /**
+     * Generate random bytes of length.
+     * @param {number} length The amount of bytes.
+     * @return {Buffer} A buffer.
+     */
+    static randomBytes(length) {
+        return Cryptography.randomBytes(length);
+    }
     /**
      * Generate a randomId with length 16 with lowercase letters, uppercase letters, and numbers.
      * @return {string} A random string.

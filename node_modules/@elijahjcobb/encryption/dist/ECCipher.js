@@ -32,13 +32,11 @@ class ECCipher {
     /**
      * Create a new ECCipher instance.
      * @param {string} password A password used to encrypt data.
-     * @param {string} salt An optional salt. Use for greater security.
      */
-    constructor(password, salt) {
+    constructor(password) {
         this.iv = Buffer.alloc(16, 0);
         this.algo = "aes-256-cbc";
-        this.password = Buffer.from(password, "utf8");
-        this.salt = salt || "";
+        this.password = password;
     }
     /**
      * Encrypt data with a ECCipher instance.
@@ -47,7 +45,7 @@ class ECCipher {
      */
     encrypt(data) {
         try {
-            const key = Cryptography.scryptSync(this.password, this.salt, 32);
+            const key = Cryptography.scryptSync(this.password, "", 32);
             const cipher = Cryptography.createCipheriv(this.algo, key, this.iv);
             let encrypted = cipher.update(data.toString("binary"), "binary", "hex");
             encrypted += cipher.final("hex");
@@ -64,7 +62,7 @@ class ECCipher {
      */
     decrypt(data) {
         try {
-            const key = Cryptography.scryptSync(this.password, this.salt, 32);
+            const key = Cryptography.scryptSync(this.password, "", 32);
             const decipher = Cryptography.createDecipheriv(this.algo, key, this.iv);
             let decrypted = decipher.update(data, undefined, "utf8");
             decrypted += decipher.final("utf8");

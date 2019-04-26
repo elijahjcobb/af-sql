@@ -125,7 +125,7 @@ export class ECSQLDatabase {
 			user: initObject.username,
 			password: initObject.password,
 			database: initObject.database,
-			port: 0
+			port: initObject.port
 		});
 
 	}
